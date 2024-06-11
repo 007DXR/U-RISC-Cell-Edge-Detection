@@ -11,17 +11,19 @@
 
 #### Steps
 ```bash
+git clone git@github.com:007DXR/U-RISC-Cell-Edge-Detection.git
+cd ./U-RISC-Cell-Edge-Detection
 python3.9 -m virtualenv venv 
 source ./venv/bin/activate 
 pip install -r requirements.txt
 ```
 
-Install datasets and models from [link](https://disk.pku.edu.cn/link/AA35E85994EA434DE88A1B27F148E78FB3). Put it in top-level folder.
+Install datasets and models from [link](https://disk.pku.edu.cn/link/AA35E85994EA434DE88A1B27F148E78FB3). Put it in folder `/U-RISC-Cell-Edge-Detection`.
 
 ## Dataset
-U-RISC dataset provides many high-resolution SEM mouse retinal neurons with per-pixel level annotation for boundary segmentation.
+[U-RISC](https://www.biendata.xyz/competition/urisc/data/) is an annotated Ultra-high Resolution Image Segmentation dataset for cell membrane.
 
-There are two tracks in the competition: the Simple one and the Complex one.
+There are two tracks: the Simple one and the Complex one.
 
 The Simple track has fewer cell counts, smaller image size, lower resolution and fewer pixels on the cell membrane. The Simple track has 30 training images, 9 validation images and 30 test images, the resolution of each image and label is 1024×1024.
 

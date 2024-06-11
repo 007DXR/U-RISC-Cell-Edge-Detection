@@ -10,3 +10,5 @@ wandb/
 *.out
 venv/
 .idea/
+presentation.pptx
+~$presentation.pptx
