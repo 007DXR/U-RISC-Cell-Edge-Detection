@@ -1,27 +1,43 @@
-# EM cytomembrane segmentation with neural network ensemble and morphological processing
+# U-RISC Cell Edge Detection
 
 ## Environment
-#### Hardware
+### Hardware
+- GPU (Apple M1 Pro,16-core)
+- CPU(16 GB)
 
-- 4 NVIDIA 3090Ti GPUs (24GB memory each)
-- 32 CPUs
+### Software
+- macOS 14.0，Darwin 23.0.0
+- Python 3.9.0
 
-#### Packages
+#### Steps
 ```bash
+python3.9 -m virtualenv venv 
+source ./venv/bin/activate 
 pip install -r requirements.txt
 ```
 
-## Data
-Processed data and pretrained ResNet (50 and 152) can be downloaded from the links below. Put it in top-level folder.
-#### [Baidu Disk](https://pan.baidu.com/s/1Fmc9tb9AYQMb54sBpS66Dw) password: 8eqb
-#### [PKU Disk](https://disk.pku.edu.cn:443/link/73C7A2151C29E2CF22676F858C7ED32C)
+Install datasets and models from [link](https://disk.pku.edu.cn/link/AA35E85994EA434DE88A1B27F148E78FB3). Put it in top-level folder.
+
+## Dataset
+U-RISC dataset provides many high-resolution SEM mouse retinal neurons with per-pixel level annotation for boundary segmentation.
+
+There are two tracks in the competition: the Simple one and the Complex one.
+
+The Simple track has fewer cell counts, smaller image size, lower resolution and fewer pixels on the cell membrane. The Simple track has 30 training images, 9 validation images and 30 test images, the resolution of each image and label is 1024×1024.
+
+The Complex track has more cell counts, larger image size, higher resolution and more pixels on the cell membrane.
+
+
+Dataset is also available from [link](https://pan.baidu.com/s/1MD_ESaszcLv3xxQmJXPzfw#list/path=%2F). password: 20b8
+
 
 ## Model
-#### Simple Track
-[DFF](https://arxiv.org/abs/1902.09104), backbone ResNet-50
 
-#### Complex Track
-[CASENet](https://arxiv.org/abs/1705.09759), backbone ResNet-152
+Architecture model : [DFF](https://arxiv.org/abs/1902.09104)、[CASENet](https://arxiv.org/abs/1705.09759)
+
+Backbone model : ResNet-152、ResNet-50
+
+Models are also available from [link](https://pan.baidu.com/s/1Fmc9tb9AYQMb54sBpS66Dw). password: 8eqb
 
 
 ## Training

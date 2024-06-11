@@ -66,7 +66,7 @@ if __name__ == "__main__":
         print("Not a proper model name")
         exit(0)
 
-    model_dir = os.path.join("outdir", dataset,  args.model)
+    model_dir = os.path.join("data/models", dataset,  args.model)
     model_names = os.listdir(model_dir)
     model_names = [model_name for model_name in model_names if model_name.startswith("best")]
 
@@ -81,8 +81,10 @@ if __name__ == "__main__":
             os.makedirs(os.path.join(outdir, score))
         outdir = os.path.join(outdir, score)
         tbar = tqdm(testloader)
-        for filename, image in tbar:
-            image = image.cpu()
+
+        for image,filename in tbar:
+            # image = image.cuda()
+            print(filename,image)
             if dataset == "simple":
                 result = test_simple(image, model)
             else:

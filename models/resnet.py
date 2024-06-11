@@ -158,35 +158,35 @@ class ResNet(nn.Module):
         return x, c1, c2, c3, c4
 
 
-def resnet18(pretrained=False, root="data/models", **kwargs):
+def resnet18(pretrained=False, root="data/backbones", **kwargs):
     model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
     if pretrained:
         model.load_state_dict(torch.load(os.path.join(root, "resnet18.pth")), strict=False)
     return model
 
 
-def resnet34(pretrained=False, root="data/models", **kwargs):
+def resnet34(pretrained=False, root="data/backbones", **kwargs):
     model = ResNet(BasicBlock, [3, 4, 6, 3], **kwargs)
     if pretrained:
         model.load_state_dict(torch.load(os.path.join(root, "resnet34.pth")), strict=False)
     return model
 
 
-def resnet50(pretrained=False, root="data/models", **kwargs):
+def resnet50(pretrained=False, root="data/backbones", **kwargs):
     model = ResNet(Bottleneck, [3, 4, 6, 3], strides=(1, 1, 2, 2), **kwargs)
     if pretrained:
         model.load_state_dict(torch.load(os.path.join(root, "resnet50.pth")), strict=False)
     return model
 
 
-def resnet101(pretrained=False, root="data/models", **kwargs):
+def resnet101(pretrained=False, root="data/backbones", **kwargs):
     model = ResNet(Bottleneck, [3, 4, 23, 3], **kwargs)
     if pretrained:
         model.load_state_dict(torch.load(os.path.join(root, "resnet101.pth")), strict=False)
     return model
 
 
-def resnet152(pretrained=False, root="data/models", **kwargs):
+def resnet152(pretrained=False, root="data/backbones", **kwargs):
     model = ResNet(Bottleneck, [3, 8, 36, 3], **kwargs)
     if pretrained:
         model.load_state_dict(torch.load(os.path.join(root, "resnet152.pth")), strict=False)
